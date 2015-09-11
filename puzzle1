@@ -1,4 +1,4 @@
-//euler challenge one
+//find the sum of the numbers that are multiples of 3 or 5
 
 var multofthreeandfive = function(num){
     num -= 1;
