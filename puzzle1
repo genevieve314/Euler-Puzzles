@@ -1,0 +1,20 @@
+//euler challenge one
+
+var multofthreeandfive = function(num){
+    num -= 1;
+    var newArray = [];
+    for(var i = 0; i<num; i++){
+        newArray.push(num-i);
+    }
+    
+    var total = 0;
+    for(var x = 0; x<newArray.length; x++){
+        if(newArray[x] % 5 === 0 || newArray[x] % 3 === 0){
+            total += newArray[x];
+        }
+    }
+        
+    return total;
+};
+
+multofthreeandfive(1000);
