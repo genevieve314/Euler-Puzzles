@@ -1,0 +1,52 @@
+function ArithGeo(arr) { 
+  var diff = (arr[1] - arr[0]);
+  var div = (arr[1] / arr[0]);
+  var arrDiff = [];
+  var arrDiv = [];
+  var testDiffResult, testDivResult, result;
+  
+//create an array and push the difference between terms to it
+  for(var i=1 ; i<arr.length ; i++){
+    arrDiff.push(arr[i] - arr[i-1]);
+    arrDiv.push(arr[i] / arr[i-1]);
+  }
+  
+//test if all differences are the same
+  for(var j=0 ; j<arrDiff.length ; j++){
+    if(diff === arrDiff[j]){
+      testDiffResult = true;
+    } else {
+      testDiffResult = false;
+    }
+  }
+  
+ 
+//test if all the divisors are the same
+  for(var k=0 ; k<arrDiv.length ; k++){
+    if(div === arrDiv[k]){
+      testDivResult = true;
+    } else {
+      testDivResult = false;
+    }
+  }
+
+  
+  if(testDiffResult){
+      result = "Arithmetic";
+  }else if (testDivResult){
+      result = "Geometric";
+  } else {
+      result = -1;
+  }
+          
+  
+  return result; 
+         
+}
+
+// keep this function call here 
+// to see how to enter arguments in JavaScript scroll down
+ArithGeo(readline());           
+
+         
+}
