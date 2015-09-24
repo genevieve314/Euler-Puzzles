@@ -1,0 +1,22 @@
+//still a work in progress, just ran out of time today.
+
+function AlphabetSoup(str) { 
+  var word = str.split("");
+  var alpha = "abcdefghijklmnopqrstuvwxyz";
+  var newArr = [];
+  
+  function greaterThan(letter1, letter2){
+    if(alpha.indexOf(letter1) >= alpha.indexOf(letter2)){
+      return letter1;
+    } else {
+      return letter2;
+    }
+  }
+  
+  for(var i=0 ; i<word.length ; i++){
+    if(
+      
+  
+  return str; 
+         
+}
