@@ -1,0 +1,17 @@
+//not sure the is the most perfect solution, but it passes all the test cases
+
+function Palindrome(str) {
+  var test;
+  for(var i=0 ; i<str.length ; i++){
+    for(var x =(str.length -1); x>=0 ; x--){
+      if(str.charAt(i) === str.charAt(x)){
+        test = true;
+      } else {
+        test = false;
+      }
+    }
+  }
+  
+  return test; 
+         
+}
