@@ -1,0 +1,11 @@
+//evaluating if a number is prime
+
+function PrimeTime(num) { 
+  var root = Math.ceil( Math.sqrt(num));
+  for(var x=2 ; x<=root ; x++){
+    if(num % x === 0){
+		return false;
+    }
+  }
+  return true;
+}
