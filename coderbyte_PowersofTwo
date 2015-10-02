@@ -1,0 +1,17 @@
+//determine if a number is a power of two
+
+function PowersofTwo(num) { 
+  var root = Math.ceil( Math.sqrt(num));
+  var exp = 1;
+  
+  while(exp <= root){
+    if(Math.pow(2,exp) === num){
+      return true;
+    } else {
+      exp += 1;
+    }
+  }
+ 
+  return false; 
+
+}
