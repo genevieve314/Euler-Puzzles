@@ -3,8 +3,9 @@ function CountingMinutesI(str) {
   var breakPoint = str.indexOf("-");
   var end = str.length - 1;
   var time = [];
-  var timeMin = [];
-
+  var timeOne, timeTwo, solution;
+  
+//divide string into an array. Hour, min, am/pm each have their own value in array.
   time[0] = str.substring(0, (breakPoint - 5) );
   time[1] = str.substring((breakPoint - 4),(breakPoint-2));
   time[2] = str.substring((breakPoint -2), breakPoint);
@@ -12,23 +13,32 @@ function CountingMinutesI(str) {
   time[4] = str.substr(end-3, 2);
   time[5] = str.substr(end-1, 2);
 
+//evaluate first time for total minutes and assign to a new variable
   if(time[0] === 12 && time[2] === "am"){
-      timeMin[0] = time[1];
+      timeOne = time[1];
   }else if(time[2] === "am" || (time[0] === 12 && time[2] === "pm")){
-      timeMin[0] = (time[0]*60) + time[1];
+      timeOne = (time[0]*60) + time[1];
   }else {
-      time[0] = (time[0] * 120) + time[1];
+      timeOne = (time[0] * 60) + time[1] + 720;
   }
 
+//evaluate second time for total minutes and assign to a new variable
   if(time[3] === 12 && time[5] === "am"){
-      timeMin[1] = time[4];
+      timeTwo = time[4];
   }else if(time[5] === "am" || (time[3] === 12 && time[4] === "pm")){
-      timeMin[1] = (time[3]*60) + time[4];
+      timeTwo = (time[3]*60) + time[4];
   }else {
-      time[1] = (time[3] * 120) + time[4];
+      timeTwo = (time[3] * 60) + time[4] + 720;
   }
+  
+//assess times and return final solution
+  if(timeOne<=timeTwo){
+      solution = timeTwo - timeOne;
+  } else {
+      solution = (1440 - timeTwo) + timeOne;
+  }
+
     
-  return timeMin[0] - timeMin[1];
+  return solution;
          
 }
-   
