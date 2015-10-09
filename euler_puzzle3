@@ -1,0 +1,33 @@
+//still a work in progress and not yet a perfect solution. Soon!!!
+
+var greatestPrime = function(num){
+    var arrayOfPrimes = [];
+    var currentPrime = 2;
+    var sqrt = Math.sqrt(num);
+
+//evaluate if the input value is prime by looping through all numbers greater than 2 and less than the input value, to test for a remainder of 0.
+    function isPrime (val){
+        for(var i = 2; i < val; i++){
+            if(val % i === 0){
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+    
+//evaluate all numbers less than the square root of the input value for primality. Pass numbers into the isPrime function, if true, push to array.
+    for(var x = 0; x <= sqrt; x++){
+        if(isPrime(x)){
+            arrayOfPrimes.push(x);
+        }
+    }
+
+//evaluate array of primes for largest factor by dividing into input value to test for a remainder of 0.
+    for(var y = 0; y < arrayOfPrimes.length; y++){
+        if(num % arrayOfPrimes[y] === 0 && arrayOfPrimes[y] > currentPrime){
+            currentPrime = arrayOfPrimes[y];
+        } 
+    }
+    return currentPrime;
+};
